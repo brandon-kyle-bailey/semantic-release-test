@@ -1,0 +1,12 @@
+
+.env
+node_modules
+dist
+.DS_Store
+
+.env*
+# Sentry Auth Token
+.sentryclirc
+
+*.js
+!jest.config.js
