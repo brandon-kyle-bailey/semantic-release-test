@@ -42,8 +42,14 @@ npm install --save-dev husky semantic-release @commitlint/{cli,config-convention
 ## How to use this solution
 When making commits, use the following approach to trigger the appropriate release type:
 <img width="770" alt="image" src="https://github.com/user-attachments/assets/80d60c00-e25f-4aba-9066-1e1217a4c660">
+
 Example:
 ```
 fix: Fixed a rounding issue with an endpoint
 ```
 will produce a patch version release. I.e. X.X.1
+and will automatically populate a release notes doc using the commit message types:
+<img width="1251" alt="image" src="https://github.com/user-attachments/assets/dc1b3426-dc1a-4e76-9c5f-2b73edb28129">
+
+Note the items listed under "Bug Fixes" are commites prefixed with the "fix:" label. 
+The same can be observed with the "Features" list using the "feat:" prefix.
