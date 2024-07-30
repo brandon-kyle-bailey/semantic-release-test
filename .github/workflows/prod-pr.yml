@@ -1,4 +1,4 @@
-name: Automated Production release pull request
+name: Create Production Release PR
 on:
   push:
     branches:
