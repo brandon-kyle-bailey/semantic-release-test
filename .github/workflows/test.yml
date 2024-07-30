@@ -26,23 +26,23 @@ jobs:
       - name: Get Latest
         uses: actions/checkout@v2
 
-      - name: Set Up Node 14
+      - name: Set Up Node 20
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "20"
 
       - name: Cache node modules
         id: cache-nodemodules
         uses: actions/cache@v2
         with:
           path: |
-            packages/cube/node_modules
+            node_modules
           key: ${{ runner.os }}-dev-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-dev-
 
       - name: Install Dependencies
-        run: npm install --frozen-lockfile
+        run: npm install
 
       - name: Run unit tests
         run: npm run test:unit
