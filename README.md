@@ -53,3 +53,7 @@ and will automatically populate a release notes doc using the commit message typ
 
 Note the items listed under "Bug Fixes" are commites prefixed with the "fix:" label. 
 The same can be observed with the "Features" list using the "feat:" prefix.
+
+The integration will also add a lovely comment to the closed PR:
+<img width="904" alt="image" src="https://github.com/user-attachments/assets/a0568248-933d-4d75-b9d7-2b1eb4dd470d">
+
