@@ -8,4 +8,8 @@ describe("Given isEven function", () => {
     const result = isEven(3);
     expect(result).toBe(false);
   });
+  it("Should return false if number not divisible by some large even number", () => {
+    const result = isEven(200);
+    expect(result).toBe(false);
+  });
 });

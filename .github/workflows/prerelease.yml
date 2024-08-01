@@ -1,4 +1,4 @@
-name: Perform pre-release tasks
+name: Prerelease
 on:
   push:
     branches:
