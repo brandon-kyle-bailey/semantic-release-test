@@ -1,6 +1,8 @@
 # Proposal for CI/CD Automated Semantic Release workflow
 
 [![semantic-release: conventional](https://img.shields.io/badge/semantic--release-conventional-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+[![Prerelease](https://github.com/brandon-kyle-bailey/semantic-release-test/actions/workflows/prerelease.yml/badge.svg)](https://github.com/brandon-kyle-bailey/semantic-release-test/actions/workflows/prerelease.yml)
+![GitHub Release](https://img.shields.io/github/v/release/brandon-kyle-bailey/semantic-release-test)
 
 ## Motivation
 
