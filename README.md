@@ -108,20 +108,58 @@ jobs:
 When a pull request is merged into main, the Github workflow Release action is triggered which invokes semantic-release.
 This traverses the commit history and compiles a release based on the commit convention.
 
+### Anatomy of a commit message
+
+```
+<type>(<scope>): <short summary>
+  │       │             │
+  │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
+  │       │
+  │       └─⫸ Commit Scope(Optional): animations|bazel|benchpress|common|compiler|compiler-cli|core|
+  │                          elements|forms|http|language-service|localize|platform-browser|
+  │                          platform-browser-dynamic|platform-server|router|service-worker|
+  │                          upgrade|zone.js|packaging|changelog|docs-infra|migrations|
+  │                          devtools
+  │
+  └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
+```
+
+#### Types
+
+- build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+- ci: Changes to our CI configuration files and scripts (examples: CircleCi, SauceLabs)
+- docs: Documentation only changes
+- feat: A new feature
+- fix: A bug fix
+- perf: A code change that improves performance
+- refactor: A code change that neither fixes a bug nor adds a feature
+- test: Adding missing tests or correcting existing tests
+
 ### What will trigger a release
 
 The following commit message patterns will trigger a release of their given scope:
 
-- Patch release (X.X.1)
+- Patch release/Fix Release (X.X.1)
 
 ```
 fix(pencil): stop graphite breaking when too much pressure applied
 
 ```
 
-- Minor release (X.1.0)
+- Minor release/Feature Release (X.1.0)
 
 ```
 feat(pencil): stop graphite breaking when too much pressure applied
 
+```
+
+- Major release/Breaking Release (1.0.0)
+
+**(Note that the BREAKING CHANGE: token must be in the footer of the commit)**
+
+```
+feat(pencil): stop graphite breaking when too much pressure applied
+
+BREAKING CHANGE: The graphiteWidth option has been removed.
+The default graphite width of 10mm is always used for performance reasons.
 ```
