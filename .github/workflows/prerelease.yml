@@ -1,18 +1,8 @@
-name: Run Unit Tests
-
+name: Perform pre-release tasks
 on:
-  pull_request:
+  push:
     branches:
       - dev
-      - master
-
-  workflow_dispatch:
-    inputs:
-      runAll:
-        description: Run all jobs
-        type: boolean
-        required: false
-        default: false
 
 concurrency:
   group: environment-test-${{ github.ref }}
@@ -46,3 +36,21 @@ jobs:
 
       - name: Run unit tests
         run: npm run test:unit
+  promote-to-production:
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+      - name: Reset promotion branch
+        run: |
+          git fetch origin dev:dev
+          git reset --hard dev
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: dev
+          title: Production Release
+          body: Production release
