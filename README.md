@@ -40,7 +40,7 @@ npm install --save-dev husky semantic-release @commitlint/{cli,config-convention
 
 - copy the `.github/` directory into the root of your project
 - copy the `.husky/` directory into the root of your project
-- Start using the [Conventional Commit Message Conention](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional)
+- Start using the [Conventional Commit Message Convention](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional)
 
 ## How to use this solution
 
@@ -52,13 +52,13 @@ Example:
 ```
 fix: Fixed a rounding issue with an endpoint
 ```
-will produce a patch version release. I.e. X.X.1
+
+Will produce a patch version release. I.e. X.X.1
 and will automatically populate a release notes doc using the commit message types:
 <img width="1251" alt="image" src="https://github.com/user-attachments/assets/dc1b3426-dc1a-4e76-9c5f-2b73edb28129">
 
-Note the items listed under "Bug Fixes" are commites prefixed with the "fix:" label. 
+Note the items listed under "Bug Fixes" are commits prefixed with the "fix:" label.
 The same can be observed with the "Features" list using the "feat:" prefix.
 
 The integration will also add a lovely comment to the closed PR:
 <img width="904" alt="image" src="https://github.com/user-attachments/assets/a0568248-933d-4d75-b9d7-2b1eb4dd470d">
-
